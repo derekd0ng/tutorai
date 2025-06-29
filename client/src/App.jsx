@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
-const API_BASE = 'http://localhost:3001/api'
+const API_BASE = process.env.NODE_ENV === 'production' 
+  ? '/api' 
+  : 'http://localhost:5000/api'
 
 function App() {
   const [activeTab, setActiveTab] = useState('students')
